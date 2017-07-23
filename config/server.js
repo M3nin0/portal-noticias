@@ -1,3 +1,8 @@
+//Modulo para conexão com banco de dados MySQL
+//para instalar usa-se: npm install mysql --save
+//como já dito o --save adiciona os arquivos ao projeto e ao package
+
+
 //importando o express
 var express = require('express');
 
