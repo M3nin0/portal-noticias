@@ -12,15 +12,19 @@
 //permite que as alterações sejam processadas sem a necessidade de fechar abrir o servidor
 //para instalar usa-se: npm install -g nodemon
 
+/*
+Configurações movidas para o server.js
 var express = require('express'); //Ao invês de importar o http, importei o express 
 var app = express(); //Como o express retorna uma função, criei uma outra variavel que carrega a função do express
 
 var msg = require("./mod_teste");
 
-//Depois de instalar o ejs, é necessário dizer ao express que outro modulo de views será utilizado, para fazer isso usa-se:
+Depois de instalar o ejs, é necessário dizer ao express que outro modulo de views será utilizado, para fazer isso usa-se:
 app.set('view engine', 'ejs');
-//Veja que fiz o set do view engine para ejs
+Veja que fiz o set do view engine para ejs
+*/
 
+var app = require('./config/server.js');
 
 /*
 app.get('/tecnologia', function(req, res){
@@ -68,7 +72,6 @@ app.get("/tecnologia", function(req, res){
 //Neste listen além da porta, há também a função de callback (função que será executado na subida do servidor)
 app.listen(3000, function(){
 
-	console.log('Servidor rodando com express');
-	console.log(msg());
+	console.log('Server online');
 
 });
