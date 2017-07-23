@@ -26,6 +26,22 @@ Veja que fiz o set do view engine para ejs
 
 var app = require('./config/server.js');
 
+//Nos tres casos abaixo, ao importar o modulo já chamo a função, veja que após o require há o (app)
+//esse é o campo para argumentos da função retornada pelo required, que neste caso é a que define
+//em cada um dos arquivos home.js, noticias.js e formulario_inclusao_noticia.js
+
+//Adicionando o modulo de rota de noticias
+var rotaNoticias = require("./app/routes/noticias")(app); 
+
+
+//Adicionando o modulo de rota da home
+var rotaHome = require("./app/routes/home")(app);
+
+
+//Adicionando o modulo de rota do formulario de inclusao
+var rotaInclui = require("./app/routes/formulario_inclusao_noticia.js")(app);
+
+
 /*
 app.get('/tecnologia', function(req, res){
 
@@ -37,6 +53,7 @@ app.get('/tecnologia', function(req, res){
 
 //a função get é utilizada para definir os caminhos das paginas do site
 //os parametros dela são, get('endereco', )
+/* Movido para o arquivo app/routes/home.js
 app.get('/', function(req, res){
 
 	//perceba que com o express não é necessário utilizar o req.url, ele já entende
@@ -47,15 +64,19 @@ app.get('/', function(req, res){
 	res.render("home/index");
 
 });
+*/
+/* Movido para /app/routes/formulario_inclusao_noticia.js
 
 app.get("/formulario_inclusao_noticia", function(req, res){
 	res.render("admin/form_add_noticia");
 });
+*/
 
-
+/* Movido para app/routes/noticias.js
 app.get("/noticias", function(req, res){
 	res.render("noticias/noticias");
 });
+*/
 
 
 /*
