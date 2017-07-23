@@ -19,11 +19,10 @@ module.exports = function(app){
 			//O erro será preenchido quando algum erro ocorrer, e o result é onde
 			//fica armazenado o resultado da consulta feita
 
-			res.send(result);
+			//Configurando para que o render do ejs recupera a informação da consulta do banco de dados
+			// 
+			res.render('noticias/noticias', {noticias: result});
 
 		});
-	
-		//res.render('noticias/noticias');
-
 	});
 };

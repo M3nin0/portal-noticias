@@ -8,5 +8,25 @@
 
 		<h1>Notícias</h1>
 
+		<!-- Criando tabela para armazenar os valores recuperados do BD -->
+
+		<table>
+			<tr>
+				<td>ID</td>
+				<td>Titulo</td>
+				<td>Noticias</td>
+			</tr>
+
+		<!-- Adicionando código JS para tornar o conteúdo das tabelas dinâmico -->
+
+		<% for(var i = 0; i < noticias.length; i++){ %>
+
+			<tr>
+				<td><%= noticias[i].id_noticia %></td>
+				<td><%= noticias[i].titulo%></td>
+				<td><%= noticias[i].noticia%></td>
+			</tr>
+		<% } %>
+		</table>
 	</body>
 </html>
